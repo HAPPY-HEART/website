@@ -1,0 +1,39 @@
+import random
+ter=1
+b=0
+point=0
+print("WELCOME TO THE LUCK GAME")
+print("ENTER THE VALUE 1 IF YOU WANT TO PLAY")
+print("ENTER THE VALUE 2 IF YOU DON'T")
+while b==0:
+    V=int(input("VALUE:"))
+    if V==1:
+        while ter==1:
+            n=int(input("ENTER A NUMBER FROM 1 TO 6 ->"))
+            if 1<=n<=6:
+                die=random.randint(1,6)
+                if n==die:
+                    print("CONGRATS! YOUR NUMBER AND THE DICE NUMBER MATCHED",n)
+                    print("ADDED 10 POINTS TO THE SCORE")
+                    point=+10
+                    print("SCORE: ",point)
+                    ter=int(input("ENTER 1 TO CONTINUE AND 2 TO TERMINATE->"))
+                    if ter==2:
+                        print("****GAME TERMINATED BY USER****")
+                        break
+                else:
+                    print("SORRY, YOUR NUMBER DIDN'T MATCHED",n)
+                    print("YOU GOT 0 POINTS")
+                    print("SCORE: ",point)
+                    ter=int(input("ENTER 1 TO CONTINUE AND 2 TO TERMINATE->"))
+                    if ter==2:
+                        print("****GAME TERMINATED BY USER****")
+                        break
+            else:
+                print("ENTERED NUMBER IS OUT OF RANGE")
+    elif V==2:
+        print("*****YOU CHOOSE TO QUIT******")
+        break
+    else:
+        print("WRONG OPTION SELECTED")
+        continue
